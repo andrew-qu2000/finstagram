@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Make a Post</title>
+    </head>
+    <body>
+        <form action="/postPhotoAuth" method="POST">
+            <input type="text" name="filePath" placeholder="Path to image file" required/><br>
+            <input type="text" name="caption" placeholder="Write a caption..."><br>
+            <input type="checkBox" name="allFollowers" value="allFollowers">Share with all followers?</input><br><br>
+            
+            <input type="submit" value="Post"/>
+        </form>
+        <a href="/home">Cancel</a>
+    </body>
+</html>
