@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Photo {{data.pID}}</title>
+    </head>
+    <body>
+    Logged in as {{username}}<br><br>
+    Photo {{data.pID}}<br>
+	{{data.postingDate}}<br>
+	{{names.firstName}} &nbsp; {{names.lastName}}<br>
+	<u>People in this photo:</u><br>
+	{% for line in tags %}
+		{{line.username}}<br>
+	{% endfor %}<br><br>
+	<u>Reactions to this photo:</u><br>
+	{% for line in reacts %}
+		{{line.reactionTime}} &nbsp;
+		<b>{{line.username}}:</b> &nbsp;
+		{% if line.comment %}
+			{{line.comment}} &nbsp;
+		{% endif %}
+		{% if line.emoji %}
+			:{{line.emoji}}:
+		{% endif %}
+	{% endfor %}
+    </body>
+</html>

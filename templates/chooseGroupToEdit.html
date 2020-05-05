@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add to a Friend Group</title>
+    </head>
+    <body>
+    Logged in as {{username}}<br>
+	Choose a group to add to:<br>
+	{% for line in groups %}
+		<a href="/addToFriendGroup2?groupName={{line.groupName}}">{{line.groupName}}</a><br>
+	{% endfor %}<br>
+    <a href="/home">Go back</a>
+    </body>
+</html>

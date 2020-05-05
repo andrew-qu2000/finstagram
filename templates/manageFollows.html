@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Followers</title>
+    </head>
+    <body>
+    Logged in as {{username}}<br>
+	Send a request:
+	<form action="/sendRequest", method='POST'>
+		<input type="text" name="followee" placeholder="Username"/>
+		<input type="submit" value="Follow"/>
+	</form>
+	{% if error %}
+		<p class="error"><strong>Error:</strong> {{error}}</p>
+	{% endif %}
+    Incoming requests:<br>
+	<form action="/respondToRequest", method='POST'>
+	{% for line in request_list %}
+		<button name="response" value="Accept {{line.follower}}">Accept</button>
+		<button name="response" value="Delete {{line.follower}}">Delete</button>
+		{{line.follower}}<br>
+	{% endfor %}
+	</form><br>
+    <a href="/home">Go back</a><br>
+    </body>
+</html>

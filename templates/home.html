@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+    Logged in as {{username}}<br>
+    <a href="/postPhoto">Make a Post</a><br>
+    <a href="/makeFriendGroup">Make a Friend Group</a><br>
+	<a href="/addToFriendGroup">Add to a Friend Group</a><br>
+	<a href="/manageFollows">Manage Followers</a><br>
+    <a href="/logout">Logout</a><br><br>
+	Latest Posts:<br>
+	{% for line in visiblePIDs %}
+		{{line.pID}}
+		<a href="/viewPhotoInfo?pID={{line.pID}}">See more info</a><br>
+	{% endfor %}
+    </body>
+</html>

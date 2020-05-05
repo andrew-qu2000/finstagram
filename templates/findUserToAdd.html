@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add to Group</title>
+    </head>
+    <body>
+    Logged in as {{username}}<br>
+	Find a user to add to {{groupName}}:
+	<form action="/addToFriendGroup3?groupName={{groupName}}", method='POST'>
+		<input type="text" name="newFriend" placeholder="Username"/>
+		<input type="submit" value="Add"/>
+	</form>
+	{% if error %}
+		<p class="error"><strong>Error:</strong> {{error}}</p>
+	{% endif %}
+    <a href="/home">Go back</a><br>
+    </body>
+</html>
